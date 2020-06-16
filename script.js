@@ -19,18 +19,18 @@ $(document).ready(() => {
       }
 
     const cards = [
-        { name: 'squirrel', img: '/squirrel.svg', points: 100, msg: `<li class='up'>⬆ laaaaaa</li> `},
-        { name: 'fireworks', img: '/fireworks.svg', points: -100, msg: `<li class='down'>⬇ laaaaaa</li> `},
-        { name: 'fireworks', img: '/fireworks.svg', points: -10, msg: `<li class='down'>⬇ laaaaaa</li> `},
-        { name: 'squirrel', img: '/squirrel.svg', points: 10, msg: `<li class='up'>⬆ laaaaaa</li> `},
-        { name: 'fireworks', img: '/fireworks.svg', points: -100, msg: `<li class='down'>⬇ laaaaaa</li> `},
-        { name: 'squirrel', img: '/squirrel.svg', points: 10, msg: `<li class='up'>⬆ laaaaaa</li> `},
-        { name: 'squirrel', img: '/squirrel.svg', points: 10, msg: `<li class='up'>⬆ laaaaaa</li> `},
-        { name: 'fireworks', img: '/fireworks.svg', points: -100, msg: `<li class='down'>⬇ laaaaaa</li> `},
-        { name: 'squirrel', img: '/squirrel.svg', points: 10, msg: `<li class='up'>⬆ laaaaaa</li> `},
-        { name: 'squirrel', img: '/squirrel.svg', points: 50, msg: `<li class='up'>⬆ laaaaaa</li> `},
-        { name: 'squirrel', img: '/squirrel.svg', points: 10, msg: `<li class='up'>⬆ laaaaaa</li> `},
-        { name: 'squirrel', img: '/squirrel.svg', points: 10, msg: `<li class='up'>⬆ laaaaaa</li> `},
+        { name: 'squirrel', img: '/squirrel.svg', points: 10, msg: `<li class='up'>saw a squirrel uhu</li> `},
+        { name: 'fireworks', img: '/fireworks.svg', points: -100, msg: `<li class='down'>noooo fireworks suck</li> `},
+        { name: 'fireworks', img: '/fireworks.svg', points: -100, msg: `<li class='down'>noooo fireworks suck</li> `},
+        { name: 'squirrel', img: '/squirrel.svg', points: 10, msg: `<li class='up'>saw a squirrel uhu</li> `},
+        { name: 'fireworks', img: '/fireworks.svg', points: -100, msg: `<li class='down'>noooo fireworks suck</li> `},
+        { name: 'squirrel', img: '/squirrel.svg', points: 100, msg: `<li class='up'>saw a squirrel uhu</li> `},
+        { name: 'squirrel', img: '/squirrel.svg', points: 100, msg: `<li class='up'>saw a squirrel uhu</li> `},
+        { name: 'fireworks', img: '/fireworks.svg', points: -100, msg: `<li class='down'>noooo fireworks suck</li> `},
+        { name: 'squirrel', img: '/squirrel.svg', points: 10, msg: `<li class='up'>saw a squirrel uhu</li> `},
+        { name: 'squirrel', img: '/squirrel.svg', points: 100, msg: `<li class='up'>saw a squirrel uhu</li> `},
+        { name: 'squirrel', img: '/squirrel.svg', points: 10, msg: `<li class='up'>saw a squirrel uhu</li> `},
+        { name: 'squirrel', img: '/squirrel.svg', points: 100, msg: `<li class='up'>saw a squirrel uhu</li> `},
       ];
 
     let board = new Board(cards);
@@ -75,36 +75,56 @@ $(document).ready(() => {
             } else {currentStreak = currentStreak + 1;
                 document.querySelector('.streak-nr').innerHTML = `${currentStreak}`;}
 
-            if (Number(card.target.parentNode.id) < 300) {
-                document.querySelector('#emoji').innerText = '🙂'
-            }
-            if (turnedCards.length === 12) {   // if all cards were turned
+            if (Number(card.target.parentNode.id) < 0) {
+                document.querySelector('#emoji').innerText = '💔'
+            } else {document.querySelector('#emoji').innerText = '💕'}
+            if (turnedCards.length === 12 && newWidth < 500) {   // if all cards were turned
                 setTimeout(() => {
                     // alert('all cards turned');
                     document.querySelector('.game-over').style.visibility = 'visible';
                     document.querySelector('.ok-gif').style.visibility = 'visible';
+                    document.querySelector('.ok-gif').innerHTML = `<h2>dog is kinda confused but fine</h2>
+                    <img src="https://media.giphy.com/media/1yiNv0xauBg8SHLAJT/giphy.gif" alt="OK PUPPY" />`
                 }, 500);
             }
 
-            if (newWidth >= 500) {   // if bar gets full
+            if (newWidth > 0 && newWidth <=150) {   // if bar get empty
+                document.querySelector('.meter-progress').innerHTML = '😧'
+            } else if (newWidth > 150 && newWidth <=250) {
+                document.querySelector('.meter-progress').innerHTML = '😐'
+            } else if (newWidth > 250 && newWidth <=350) {
+                document.querySelector('.meter-progress').innerHTML = '😊'
+            } else if (newWidth > 350 && newWidth <=550) {
+                document.querySelector('.meter-progress').innerHTML = '🥰'
+            }
+
+            if (newWidth >= 550) {   // if bar gets full
+                document.querySelector('.meter-progress').style.width = '550px';
                 setTimeout(() => {
-                    newWidth = 500;
                     document.querySelector('.game-over').style.visibility = 'visible';
                     document.querySelector('.happy-gif').style.visibility = 'visible';
+                    document.querySelector('.happy-gif').innerHTML = `<h2>dog is happy oh yaaaay</h2>
+                    <img src="https://media.giphy.com/media/3ndAvMC5LFPNMCzq7m/giphy.gif" alt="SAD PUPPY" />`
                 }, 500);
             }
 
             if (newWidth < 0) {   // if bar get empty
                 document.querySelector('.meter-progress').style.visibility = 'hidden';
                 document.querySelector('.streak-nr').innerHTML = `0`;
-                // document.querySelector('.cards-div').innerHTML = `the dog died of sadness 😭😭😭😭😭😭` // kk arrumar isso aqui, uma tela na frente com .gif?
 
                 setTimeout(() => {
                     document.querySelector('.game-over').style.visibility = 'visible';
                     document.querySelector('.sad-gif').style.visibility = 'visible';
-                    document.querySelector('footer div p').innerText = '😭'
+                    // document.querySelector('footer div p').innerText = '😭'
+                    document.querySelector('.sad-gif').innerHTML = `<h2>oh noooooooo you suck and dog is sad</h2>
+                    <img src="https://media.giphy.com/media/gFcIhCZWKaCy78bS4s/giphy.gif" alt="SAD PUPPY" />`
                 }, 500)
             }
+
+
+
+
+
 
             card.target.parentNode.classList.add("noclick") // only clickable once 
             
