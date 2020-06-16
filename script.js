@@ -19,18 +19,18 @@ $(document).ready(() => {
       }
 
     const cards = [
-        { name: 'squirrel', img: '/squirrel.svg', points: 10},
-        { name: 'squirrel', img: '/fireworks.svg', points: -100} ,
-        { name: 'squirrel', img: '/fireworks.svg', points: -100},
-        { name: 'squirrel', img: '/squirrel.svg', points: 10},
-        { name: 'squirrel', img: '/fireworks.svg', points: -100},
-        { name: 'squirrel', img: '/squirrel.svg', points: 10},
-        { name: 'squirrel', img: '/squirrel.svg', points: 10},
-        { name: 'squirrel', img: '/fireworks.svg', points: -100},
-        { name: 'squirrel', img: '/squirrel.svg', points: 10},
-        { name: 'squirrel', img: '/squirrel.svg', points: 10},
-        { name: 'squirrel', img: '/squirrel.svg', points: 10},
-        { name: 'squirrel', img: '/squirrel.svg', points: 10}
+        { name: 'squirrel', img: '/squirrel.svg', points: 100, msg: `<li class='up'>⬆ laaaaaa</li> `},
+        { name: 'fireworks', img: '/fireworks.svg', points: -100, msg: `<li class='down'>⬇ laaaaaa</li> `},
+        { name: 'fireworks', img: '/fireworks.svg', points: -10, msg: `<li class='down'>⬇ laaaaaa</li> `},
+        { name: 'squirrel', img: '/squirrel.svg', points: 10, msg: `<li class='up'>⬆ laaaaaa</li> `},
+        { name: 'fireworks', img: '/fireworks.svg', points: -100, msg: `<li class='down'>⬇ laaaaaa</li> `},
+        { name: 'squirrel', img: '/squirrel.svg', points: 10, msg: `<li class='up'>⬆ laaaaaa</li> `},
+        { name: 'squirrel', img: '/squirrel.svg', points: 10, msg: `<li class='up'>⬆ laaaaaa</li> `},
+        { name: 'fireworks', img: '/fireworks.svg', points: -100, msg: `<li class='down'>⬇ laaaaaa</li> `},
+        { name: 'squirrel', img: '/squirrel.svg', points: 10, msg: `<li class='up'>⬆ laaaaaa</li> `},
+        { name: 'squirrel', img: '/squirrel.svg', points: 50, msg: `<li class='up'>⬆ laaaaaa</li> `},
+        { name: 'squirrel', img: '/squirrel.svg', points: 10, msg: `<li class='up'>⬆ laaaaaa</li> `},
+        { name: 'squirrel', img: '/squirrel.svg', points: 10, msg: `<li class='up'>⬆ laaaaaa</li> `},
       ];
 
     let board = new Board(cards);
@@ -38,11 +38,17 @@ $(document).ready(() => {
     let points = 0;
     let currentWidth = 150;
     let currentStreak = 0;
+    let turnedCards = [];
+
+    document.querySelector('button').onclick = () => {
+        document.querySelector('.start').style.visibility = 'hidden';
+        document.querySelector('button').style.visibility = 'hidden';
+    }
     
     let html = '';
     board.cards.forEach(pic => {
       html += `<div class="card" id="${pic.points}">
-                  <div class="back"></div>
+                  <div class="back" id="${pic.msg}"></div>
                   <div class="front" style="background-image: url(img/${pic.img}) "></div>
                </div>`
     });
@@ -53,24 +59,54 @@ $(document).ready(() => {
     document.querySelectorAll('.card').forEach(card => {
         card.addEventListener('click', (card) => {
             card.target.parentNode.classList.add("turned"); // vira o card que o loop ta iterando sobre
-            points += Number(card.target.parentNode.id)
-            console.log(Number(card.target.parentNode.id));
+            document.querySelector('.turned-cards-div').innerHTML += `${card.target.id}`;
+            points += Number(card.target.parentNode.id);
+
+            turnedCards.push(card.target.parentNode);
+            // if (Number(card.target.parentNode.id) > 0) {
+            //     card.target.classList.add("positive")
+            // }
             let newWidth = currentWidth + points;
             document.querySelector('.meter-progress').style.width = `${newWidth}px`; // adding point to the width of the bar
+            // console.log(`${card.target.parentNode.name}`)
             if (Number(card.target.parentNode.id) < 0) {
                 currentStreak = 0;
                 document.querySelector('.streak-nr').innerHTML = 0;
             } else {currentStreak = currentStreak + 1;
                 document.querySelector('.streak-nr').innerHTML = `${currentStreak}`;}
-            if (newWidth < 0) {
+
+            if (Number(card.target.parentNode.id) < 300) {
+                document.querySelector('#emoji').innerText = '🙂'
+            }
+            if (turnedCards.length === 12) {   // if all cards were turned
+                setTimeout(() => {
+                    // alert('all cards turned');
+                    document.querySelector('.game-over').style.visibility = 'visible';
+                    document.querySelector('.ok-gif').style.visibility = 'visible';
+                }, 500);
+            }
+
+            if (newWidth >= 500) {   // if bar gets full
+                setTimeout(() => {
+                    newWidth = 500;
+                    document.querySelector('.game-over').style.visibility = 'visible';
+                    document.querySelector('.happy-gif').style.visibility = 'visible';
+                }, 500);
+            }
+
+            if (newWidth < 0) {   // if bar get empty
                 document.querySelector('.meter-progress').style.visibility = 'hidden';
                 document.querySelector('.streak-nr').innerHTML = `0`;
                 // document.querySelector('.cards-div').innerHTML = `the dog died of sadness 😭😭😭😭😭😭` // kk arrumar isso aqui, uma tela na frente com .gif?
-                document.querySelector('.game-over').style.visibility = 'visible';
-                document.querySelector('.sad-gif').style.visibility = 'visible';
+
+                setTimeout(() => {
+                    document.querySelector('.game-over').style.visibility = 'visible';
+                    document.querySelector('.sad-gif').style.visibility = 'visible';
+                    document.querySelector('footer div p').innerText = '😭'
+                }, 500)
             }
+
             card.target.parentNode.classList.add("noclick") // only clickable once 
-            // console.log($('.front').target);
             
         });
       });

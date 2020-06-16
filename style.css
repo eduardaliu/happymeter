@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
+
 :root {
 	font-size: 16px;
 	font: inherit;
@@ -10,6 +11,8 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 } */
 body {
+	cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50px' height='80px' viewport='0 0 100 100' style='font-size:50px;'><text y='50%'>🐶</text></svg>") 16 0,auto; 
+
 	margin: 0;
 	padding: 0;
 	height: 100vh;
@@ -20,6 +23,7 @@ body {
 	line-height: 1.25;
 	color: #fff;
 
+	transition: all 0.5s;
     transition: background-color 0.5s;
 }
 
@@ -35,7 +39,55 @@ h1 {
 }
 
 h2 {
-	color: #000;
+	font-size: 2rem;
+	font-weight: 400;
+}
+
+li {
+	font-size: 0.8rem;
+	background-color: rgba(255, 255, 255, 0);
+	border-radius: 20px;
+	padding: 0.5rem 1rem 0.5rem 1rem;
+	margin: 0.5rem;
+	list-style-type: none;
+}
+
+
+
+
+.instructions-title {
+    display: inline;
+    font-size: 18px;
+    padding: 5px;
+  }
+  
+  .instructions-row {
+    margin: 0 auto;
+    width: 400px
+  }
+  
+  .instructions-number {
+    padding-right: 25px;
+    font-size: 36px;
+  }
+  
+  .instructions-text {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+
+
+
+
+.up {
+	border: 1px solid #86edff;
+	color: #ffffff;
+}
+
+.down {
+	border: 1px solid #ff82cb;
+	color: #ffffff;
 }
 
 .header {
@@ -103,22 +155,24 @@ h2 {
 .card {
 	display: inline-block;  
 	position: relative;
+	/* background-color: fuchsia; */
+	margin: 0 1rem 1rem 0;
 }
 
 .card .front,
 .card .back {
-	width: 135px;
-	height: 180px;
-	margin: 0 1rem 1rem 0;
+	/* border: 3px solid #fff; */
+	width: 120px;
+	height: 150px;
 	border-radius: 15px;
 	transition: transform 0.5s;
 }
  
 .card .back {
 	background-color: #ffb9e2;
-	background-image: linear-gradient(180deg, #ce98ec, rgba(255, 255, 255, 0));  
+	background-image: linear-gradient(180deg, #fcbee2, rgba(255, 255, 255, 0));  
 }
-  
+
 .card .front {
 	/* position absolute is what makes the cards overlap */
 	position: absolute;
@@ -139,8 +193,20 @@ h2 {
 	pointer-events: none;
  }
 
+.positive {
+	border: 1px solid #fff;
+	opacity: 1;
+  	transition: 0.7s opacity;
+}
+
+.negative {
+
+}
+
+
+
 footer {
-	z-index: 20;
+	z-index: 3;
 	position: fixed;
 	bottom: 0;
 	left: 0;
@@ -171,24 +237,72 @@ footer > div > p {
 
 
 
+
+
+
+.start {
+	font-size: 2rem;
+	background: #fff; 
+	width:      100%;
+	height:     100%; 
+	z-index:    4;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position:   fixed; 
+
+	cursor: default;
+	/* visibility: hidden; */
+}
+
+.start > div{
+	color: rgb(195, 117, 219);
+	width:      30%;
+	height:     30%; 
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	/* visibility: hidden; */
+}
+
+button {
+	border-radius: 50px;
+	background-color: #ce98ec;
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 1.5rem;
+	padding: 20px;
+	width: 200px;
+	margin: 3rem;
+	cursor: pointer;
+	visibility: visible;
+}
+
+
 .game-over {
 	opacity:    0.8; 
 	background: #000; 
 	width:      100%;
 	height:     100%; 
-	z-index:    10;
+	z-index:    2;
 	top:        0; 
 	left:       0; 
 	position:   fixed; 
 	visibility: hidden;
 }
 
-.sad-gif {
+.happy-gif,
+.sad-gif,
+.ok-gif {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	background: #fff; 
+	background:  transparent; 
 	width:      50%;
 	height:     50%; 
 	top:        25%; 
@@ -196,6 +310,6 @@ footer > div > p {
 	border-radius: 50px;
 	position:   fixed; 
 	visibility: hidden;
-	z-index:    20;
+	z-index:    3;
 
 }
