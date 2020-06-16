@@ -4,82 +4,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAPPY-O-METER :D</title>
+    <title>HAPPY METER</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body>   
+<body>
 
-    <div class="sad-gif">
-        <h2>oh noooooooo you suck and dog is sad</h2>
-        <img src="https://media.giphy.com/media/gFcIhCZWKaCy78bS4s/giphy.gif" alt="SAD PUPPY" />
-    </div>
-
+    <div class="sad-gif"></div>
     <div class="happy-gif"></div>
-
     <div class="ok-gif"></div>
 
-    <div class="game-over">
-    </div>
+    <div class="game-over"></div>
 
-    <div class="start">
+    <div class="start scene-fadeinup" >
         <div>
-            <p>TITLE GOES HEREEE</p>
+            <img src="img/dog.svg" id="bobby">
+            <h1>Bobby is not amused. #makeBobbyhappyagain</h1>
+            
             <table class="instructions-row">
                 <tr>
-                  <td class="instructions-number">1</td>
-                  <td class="instructions-text">we are trying to find the stuff doggo likes</td>
+                    <td class="instructions-number">1</td>
+                    <td class="instructions-text">we are trying to find the stuff doggo likes</td>
                 </tr>
                 <tr>
-                  <td class="instructions-number">2</td>
-                  <td class="instructions-text">press the doors? to see whats behind etc, <br>
-                    but careful with stuff that makes dog sad</td>
+                    <td class="instructions-number">2</td>
+                    <td class="instructions-text">press the doors? to see whats behind etc, <br>
+                        but careful with stuff that makes dog sad</td>
                 </tr>
                 <tr>
-                  <td class="instructions-number">3</td>
-                  <td class="instructions-text">fill it up and make dog happy thank you</td>
+                    <td class="instructions-number">3</td>
+                    <td class="instructions-text">fill it up and make dog happy thank you</td>
                 </tr>
-              </table>
-            <button type="button">START</button>
+            </table>
+            <button type="button">Start</button>
         </div>
     </div>
 
-    <div class="header">
-        
+    <div class="header scene-fadeinup">
+
         <div class="meter-div">
-            <h1>HAPPY-O-METER THINGIE</h1>
+            <h1>Happy-Meter</h1>
             <div class="meter">
-                <!-- maybe a progress element? -->
-                <div class="meter-progress"></div> 
+                <div class="meter-progress">😐</div>
             </div>
         </div>
 
         <div class="streak-div">
-            <h1>CURRENT STREAK</h1>
+            <h1>Current Streak</h1>
             <div class="streak">
                 <span class="streak-nr">0</span>
-                <span id="emoji"></span>
+                <span id="emoji">👀</span>
             </div>
         </div>
     </div>
 
     <div class="content">
-        <div class="cards-div">
-            asas
-        </div>
-
-        <div class="turned-cards-div">
-        </div>
+        <div class="cards-div"></div>
+        <div class="turned-cards-div"></div>
     </div>
 
     <footer>
-        <div><p>🙅</p></div>
+        <div>
+            <p>🙅</p>
+        </div>
     </footer>
 
-
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script> 
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 

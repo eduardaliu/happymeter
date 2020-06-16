@@ -1,94 +1,134 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
+@keyframes fadeInUp {
+	0% {
+	  opacity: 0;
+	  transform: translate3d(0, 100%, 0);
+	}
+	50% {
+		opacity: 0;
+	  }
+	100% {
+	  opacity: 1;
+	  transform: none;
+	}
+  }
+
+  @keyframes gameFade {
+	0% {
+	  opacity: 1;
+	  transform: translate(0, 0);
+	}
+	50% {
+		opacity: 1;
+	  }
+	100% {
+	  opacity: 0;
+	  transform: none;
+	  transform: translate(0, 100%);
+	}
+  }
+
+
+  .scene-fadeinup {
+	animation-duration: 0.7s;
+    transition-timing-function: ease-in;
+    animation-fill-mode: both;
+    animation-name: fadeInUp;
+  }
+
+  .gameFade {
+	animation-duration: 0.7s;
+    transition-timing-function: ease-in;
+    animation-fill-mode: both;
+    animation-name: gameFade;
+  }
 
 :root {
 	font-size: 16px;
 	font: inherit;
 	vertical-align: baseline;
 }
-/* article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-} */
+
 body {
-	cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50px' height='80px' viewport='0 0 100 100' style='font-size:50px;'><text y='50%'>🐶</text></svg>") 16 0,auto; 
+	cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50px' height='80px' viewport='0 0 100 100' style='font-size:50px;'><text y='50%'>🐶</text></svg>") 16 0, auto;
 
 	margin: 0;
 	padding: 0;
 	height: 100vh;
-    background-color: #a9e3ed;
+	background-color: #a9e3ed;
 	background-image: linear-gradient(180deg, #ce98ec, rgba(255, 255, 255, 0));
 
 	font-family: 'Rubik', sans-serif;
+	font-weight: 300;
 	line-height: 1.25;
-	color: #fff;
-
-	transition: all 0.5s;
-    transition: background-color 0.5s;
+	color: #000;
 }
 
-/* table {
-	border-collapse: collapse;
-	border-spacing: 0;
-} */
-
 h1 {
-    margin: 1rem 0 1rem 0;
+	text-transform: uppercase;
+	margin: 1rem 0 1rem 0;
 	font-size: 2rem;
-	font-weight: 400;
+	font-weight: 600;
 }
 
 h2 {
+	text-transform: uppercase;
 	font-size: 2rem;
-	font-weight: 400;
+	font-weight: 600;
+	/* background-color: antiquewhite; */
 }
 
-li {
-	font-size: 0.8rem;
-	background-color: rgba(255, 255, 255, 0);
-	border-radius: 20px;
-	padding: 0.5rem 1rem 0.5rem 1rem;
-	margin: 0.5rem;
-	list-style-type: none;
+.visible {
+	opacity: 1;
 }
-
 
 
 
 .instructions-title {
-    display: inline;
-    font-size: 1.5rem;
-    padding: 5px;
-  }
-  
-  .instructions-row {
-    margin: 0 auto;
-  }
-  
-  .instructions-number {
+	display: inline;
+	font-size: 1.5rem;
+	padding: 5px;
+}
+
+.instructions-row {
+	margin: 0 auto;
+}
+
+.instructions-number {
 	padding: 0 1rem 0 0;
 	font-size: 3rem;
 	/* background-color: blue; */
-  }
-  
-  .instructions-text {
-	font-size: 0.9rem;
+}
+
+.instructions-text {
+	font-size: 1rem;
 	line-height: 1.3rem;
 	/* background-color: red; */
-  }
+}
 
 
-
-
+li {
+	font-size: 0.9rem;
+	text-align: center;
+	font-weight: 400;
+	color: #fff;
+	border: 2px solid;
+	border-radius: 70px;
+	padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+	margin: 0.5rem;
+	list-style-type: none;
+	transition: opacity 0.5s ease;
+}
 
 .up {
-	border: 1px solid #86edff;
-	color: #ffffff;
+	border-color: #a9e3ed;
+	background-color: #a9e3ed;
 }
 
 .down {
-	border: 1px solid #ff82cb;
-	color: #ffffff;
+	border-color: #ffcfeb;
+		/* background-color: #ffcfeb; */
 }
 
 .header {
@@ -100,12 +140,12 @@ li {
 }
 
 .meter {
-	background-color:rgba(255,255,255, 0);
+	background-color: rgba(255, 255, 255, 0);
 	background-image: url('img/stripes.svg');
 	background-repeat: repeat;
 	width: 550px;
 	height: 40px;
-	border-radius:50px;
+	border-radius: 50px;
 }
 
 .meter-progress {
@@ -116,6 +156,7 @@ li {
 	width: 150px;
 	height: 40px;
 	border-radius: 50px;
+	transition: width 0.5s ease-in-out;
 }
 
 .meter-div {
@@ -128,9 +169,15 @@ li {
 	/* background-color: blue; */
 }
 
+.streak-nr {
+	color: #fff;
+	padding: 0 0.5rem 0 0;
+	/* background-color: purple; */
+}
+
 .streak {
 	text-align: center;
-	font-size: 2.5rem;
+	font-size: 2rem;
 	/* background-color: red; */
 }
 
@@ -156,7 +203,7 @@ li {
 }
 
 .card {
-	display: inline-block;  
+	display: inline-block;
 	position: relative;
 	/* background-color: fuchsia; */
 	margin: 0 1rem 1rem 0;
@@ -165,45 +212,49 @@ li {
 .card .front,
 .card .back {
 	/* border: 3px solid #fff; */
+	
 	width: 120px;
 	height: 150px;
 	border-radius: 15px;
-	transition: transform 0.5s;
+	transition: transform 0.5s, background-color 0.25s ease-in-out;
 }
- 
+
 .card .back {
-	background-color: #ffb9e2;
-	background-image: linear-gradient(180deg, #fcbee2, rgba(255, 255, 255, 0));  
+	/* background-color: #ce98ec; */
+	background-image: linear-gradient(180deg, #ffffff, rgba(255, 255, 255, 0));
+	border: 2px solid #fff;
+	background-color: #fff;
+	/* background-image: linear-gradient(180deg, #ffffff, rgba(255, 255, 255, 0)); */
+}
+
+.card .back:hover {
+	border: 2px solid #000;
+	/* background-color: #ce98ec;
+	background-image: linear-gradient(180deg, #ffffff, rgba(255, 255, 255, 0)); */
 }
 
 .card .front {
+	border: 2px solid #000;
+	box-shadow: 7px 7px 0px rgba(0, 0, 255, .2);
 	/* position absolute is what makes the cards overlap */
 	position: absolute;
 	left: 0;
 	top: 0;
-	transform: rotateY(-180deg) translateZ(1px);
+	transform: rotateY(-180deg) translateZ(100px);
 	backface-visibility: hidden;
+
 }
-  
+
 .card.turned .front {
 	transform: rotateY(0deg);
 }
+
 .card.turned .back {
 	transform: rotateY(180deg);
- }
-
- .noclick {
-	pointer-events: none;
- }
-
-.positive {
-	border: 1px solid #fff;
-	opacity: 1;
-  	transition: 0.7s opacity;
 }
 
-.negative {
-
+.noclick {
+	pointer-events: none;
 }
 
 
@@ -214,20 +265,26 @@ footer {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-footer > div {
+
+footer>div {
 	border-radius: 100px 100px 0 0;
 	width: 10rem;
 	height: 5rem;
 	background-color: white;
+	/* transition: background-color 0.5s; */
 }
 
-footer > div > p {
+footer>div:hover {
+	background-color: #ce98ec;
+}
+
+footer>div>p {
 	margin-top: 1rem;
 	font-size: 3rem;
 	text-align: center;
@@ -244,42 +301,56 @@ footer > div > p {
 
 
 .start {
+	border: 2px solid #000;
 	font-size: 2rem;
-	background: #fff; 
-	background-image: url('img/bg.svg');
-	background-size: cover;
-	width:      100%;
-	height:     100%; 
-	z-index:    4;
+	background: #fff;
+	/* background-image: url('img/bg.svg'); */
+	/* background-size: cover; */
+	border-radius: 100px;
+	top: 2.5%;
+	left: 2.5%;
+	width: 95%;
+	height: 95%;
+	z-index: 4;
 
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	position:   fixed; 
+	position: fixed;
 
 	cursor: default;
-	/* visibility: hidden; */
 }
 
-.start > div{
-	color: rgb(195, 117, 219);
-	width:      30%;
-	height:     30%; 
-	
+.start>div {
+	color: #000;
+	width: 30%;
+	text-align: center;
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	/* visibility: hidden; */
+}
+
+#start-title {
+	font-weight: 600;
+}
+
+
+#bobby {
+	width: 400px;
 }
 
 button {
-	border-radius: 50px;
-	background-color: #ce98ec;
-	border: none;
-	color: #FFFFFF;
+	border-radius: 15px;
+	border: 2px solid #000;
+	box-shadow: 7px 7px 0px rgba(0, 0, 255, .2);
+	background-color: #fff;
+	color: #ce98ec;
 	text-align: center;
+	font-weight: 600;
 	font-size: 1.5rem;
+	text-transform: uppercase;
 	padding: 20px;
 	width: 200px;
 	margin: 3rem;
@@ -287,16 +358,29 @@ button {
 	visibility: visible;
 }
 
+button:hover {
+	background-color: #ce98ec;
+	color: #fff;
+}
+
+button:active {
+	background-color: #a570c2;
+	color: #fff;
+	style: none;
+}
+
+
+
 
 .game-over {
-	opacity:    0.8; 
-	background: #000; 
-	width:      100%;
-	height:     100%; 
-	z-index:    2;
-	top:        0; 
-	left:       0; 
-	position:   fixed; 
+	opacity: 0.9;
+	background: #000;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	position: fixed;
 	visibility: hidden;
 }
 
@@ -307,14 +391,17 @@ button {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	background:  transparent; 
-	width:      50%;
-	height:     50%; 
-	top:        25%; 
-	left:       25%; 
-	border-radius: 50px;
-	position:   fixed; 
+	background: transparent;
+	width: 30%;
+	height: 50%;
+	top: 25%;
+	left: 35%;
+	position: fixed;
 	visibility: hidden;
-	z-index:    3;
+	z-index: 3;
 
+	color: #fff;
+	font-size: 1.5rem;
+	font-weight: 300;
+	text-align: center;
 }
