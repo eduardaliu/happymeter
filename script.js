@@ -61,7 +61,7 @@
      {
          name: 'bath',
          img: '/bath.svg',
-         points: -30,
+         points: -50,
          msg: `<li class='down'>Oh no, bath time!</li> `
      },
      {
@@ -73,7 +73,7 @@
      {
          name: 'cat',
          img: '/cat.svg',
-         points: -70,
+         points: -100,
          msg: `<li class='up'>Mr. Whiskers is an asshole!</li> `
      },
      {
@@ -110,6 +110,7 @@
  let html = '';
  board.cards.forEach(pic => {
      html += `<div class="card" id="${pic.points}">
+                  <div class="score-pop">${pic.points}</div>
                   <div class="back" id="${pic.msg}"></div>
                   <div class="front" style="background-image: url(img/${pic.img}) "></div>
                </div>`
@@ -122,6 +123,11 @@
 
          card.target.parentNode.classList.add("turned"); // vira o card que o loop ta iterando sobre
          card.target.style.backgroundColor = '#fff'; // fade in do bgcolor
+
+         card.target.previousElementSibling.style.display = 'block'; // seleciona o sibling anterior do elemento
+         if (card.target.previousElementSibling.innerHTML.indexOf("-") !== -1) {
+            card.target.previousElementSibling.style.backgroundColor = '#ffcfeb';
+         }
 
          turnedCards.push(card.target.parentNode); // contando o numero de cards virados
 
@@ -158,13 +164,17 @@
          }
 
          if (newWidth > 0 && newWidth <= 150) { // if bar get empty
-             document.querySelector('.meter-progress').innerHTML = '😧'
+             document.querySelector('.meter-progress').innerHTML = '😧';
+             document.querySelector('.meter-progress').style.backgroundColor = '#ff5640';
          } else if (newWidth > 150 && newWidth <= 250) {
-             document.querySelector('.meter-progress').innerHTML = '😐'
+             document.querySelector('.meter-progress').innerHTML = '😐';
+             document.querySelector('.meter-progress').style.backgroundColor = '#ffb600';
          } else if (newWidth > 250 && newWidth <= 350) {
-             document.querySelector('.meter-progress').innerHTML = '😊'
+             document.querySelector('.meter-progress').innerHTML = '😊';
+             document.querySelector('.meter-progress').style.backgroundColor = '#fff200';
          } else if (newWidth > 350 && newWidth <= 550) {
-             document.querySelector('.meter-progress').innerHTML = '🥰'
+             document.querySelector('.meter-progress').innerHTML = '🥰';
+             document.querySelector('.meter-progress').style.backgroundColor = '#96f739';
          }
 
 
@@ -176,11 +186,11 @@
                  document.querySelector('.happy-gif').innerHTML = 
                     `<h2>GOOD JOB! We have a happy Bobby!</h2>
                     <img src="img/gameover_happy.gif" alt="SAD PUPPY" />
-                    <p class="gameOverTxt">You're such a good, good human! Oh yes, you are!</p>`
+                    <p class="gameOverTxt">You're such a good, good human! <br>Oh yes, you are!</p>`
              }, 500);
          }
 
-         if (newWidth < 0) { // if bar get empty
+         if (newWidth <= 0) { // if bar get empty
              document.querySelector('.meter-progress').style.width = '0px';
              document.querySelector('.meter-progress').innerHTML = '😭'
              document.querySelector('.streak-nr').innerHTML = `0`;
