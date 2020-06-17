@@ -20,7 +20,7 @@
          name: 'squirrel',
          img: '/squirrel.svg',
          points: 200,
-         msg: `<li class='up'><b><font color='white'>SQUIRREL</font></b></li> `
+         msg: `<li class='up'><font color='white'>SQUIRREL</font></li> `
      },
      {
          name: 'fireworks',
@@ -43,7 +43,7 @@
      {
          name: 'vacuum',
          img: '/vacuum.svg',
-         points: -50,
+         points: -100,
          msg: `<li class='down'>evil snake aka the vacuum</li> `
      },
      {
