@@ -19,74 +19,74 @@
  const cardsDog = [{
          name: 'squirrel',
          img: '/squirrel.svg',
-         points: 150,
-         msg: `<li class='up'>SQUIRREL!</li> `
+         points: 200,
+         msg: `<li class='up'><b><font color='white'>SQUIRREL</font></b></li> `
      },
      {
          name: 'fireworks',
          img: '/fireworks.svg',
          points: -100,
-         msg: `<li class='down'>Fireworks suck big time!</li> `
+         msg: `<li class='down'>fireworks suck big time</li> `
      },
      {
          name: 'vet',
          img: '/vet.svg',
          points: -30,
-         msg: `<li class='down'>Time for a vet check-up!</li> `
+         msg: `<li class='down'>time for a vet check-up</li> `
      },
      {
          name: 'shoes',
          img: '/shoes.svg',
          points: 100,
-         msg: `<li class='up'>An old shoe! Delicious.</li> `
+         msg: `<li class='up'>a delicious old shoe</li> `
      },
      {
          name: 'vacuum',
          img: '/vacuum.svg',
          points: -50,
-         msg: `<li class='down'>Evil snake...</li> `
+         msg: `<li class='down'>evil snake aka the vacuum</li> `
      },
      {
          name: 'bird',
          img: '/bird.svg',
          points: 50,
-         msg: `<li class='up'>Is that a... BIRB!</li> `
+         msg: `<li class='up'>oh my GOSH, a birb</li> `
      },
      {
          name: 'petshop',
          img: '/petshop.svg',
          points: 50,
-         msg: `<li class='up'>Woo hoo a trip to the pet shop!</li> `
+         msg: `<li class='up'>trip to the pet shop incoming</li> `
      },
      {
          name: 'bath',
          img: '/bath.svg',
          points: -50,
-         msg: `<li class='down'>Oh no, bath time!</li> `
+         msg: `<li class='down'>stinky needs a bath</li> `
      },
      {
          name: 'toys',
          img: '/toys.svg',
          points: 100,
-         msg: `<li class='up'>Life is great when you have toys!</li> `
+         msg: `<li class='up'>toys makes life great again</li> `
      },
      {
          name: 'cat',
          img: '/cat.svg',
-         points: -100,
-         msg: `<li class='up'>Mr. Whiskers is an asshole!</li> `
+         points: -120,
+         msg: `<li class='down'>mr. whiskers is an asshole</li> `
      },
      {
          name: 'trash',
          img: '/trash.svg',
          points: 80,
-         msg: `<li class='up'>Trash yay.</li> `
+         msg: `<li class='up'>bag of treasures aka trash</li> `
      },
      {
          name: 'post',
          img: '/post.svg',
          points: 30,
-         msg: `<li class='up'>Postman time!</li> `
+         msg: `<li class='up'>hello mr. postman!</li> `
      },
  ];
 
@@ -126,7 +126,7 @@
 
          card.target.previousElementSibling.style.display = 'block'; // seleciona o sibling anterior do elemento
          if (card.target.previousElementSibling.innerHTML.indexOf("-") !== -1) {
-            card.target.previousElementSibling.style.backgroundColor = '#ffcfeb';
+             card.target.previousElementSibling.style.backgroundColor = '#ffcfeb';
          }
 
          turnedCards.push(card.target.parentNode); // contando o numero de cards virados
@@ -155,9 +155,12 @@
              setTimeout(() => {
                  // alert('all cards turned');
                  document.querySelector('.game-over').style.visibility = 'visible';
+                 document.querySelector('body').onclick = () => {
+                     location.reload();
+                 }
                  document.querySelector('.ok-gif').style.visibility = 'visible';
-                 document.querySelector('.ok-gif').innerHTML = 
-                    `<h2>Almost there...</h2>
+                 document.querySelector('.ok-gif').innerHTML =
+                     `<h2>Almost there...</h2>
                     <img src="img/gameover_almost.gif" alt="OK PUPPY" />
                     <p class="gameOverTxt">But Bobby's just bamboozled now. <br>Not so helpful, you.</p>`
              }, 500);
@@ -182,9 +185,12 @@
              document.querySelector('.meter-progress').style.width = '550px';
              setTimeout(() => {
                  document.querySelector('.game-over').style.visibility = 'visible';
+                 document.querySelector('body').onclick = () => {
+                     location.reload();
+                 }
                  document.querySelector('.happy-gif').style.visibility = 'visible';
-                 document.querySelector('.happy-gif').innerHTML = 
-                    `<h2>GOOD JOB! We have a happy Bobby!</h2>
+                 document.querySelector('.happy-gif').innerHTML =
+                     `<h2>GOOD JOB! We have a happy Bobby!</h2>
                     <img src="img/gameover_happy.gif" alt="SAD PUPPY" />
                     <p class="gameOverTxt">You're such a good, good human! <br>Oh yes, you are!</p>`
              }, 500);
@@ -197,9 +203,12 @@
 
              setTimeout(() => {
                  document.querySelector('.game-over').style.visibility = 'visible';
+                 document.querySelector('body').onclick = () => {
+                     location.reload();
+                 }
                  document.querySelector('.sad-gif').style.visibility = 'visible';
-                 document.querySelector('.sad-gif').innerHTML = 
-                    `<h2>Oh no. You made Bobby extra sad.</h2> 
+                 document.querySelector('.sad-gif').innerHTML =
+                     `<h2>Oh no. You made Bobby extra sad.</h2> 
                     <img src="img/gameover_sad.gif" alt="SAD PUPPY" />
                     <p class="gameOverTxt">Why do you hate Bobby so much?</p>`
              }, 500)
