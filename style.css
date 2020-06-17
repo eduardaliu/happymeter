@@ -37,10 +37,10 @@ h2 {
 	/* background-color: antiquewhite; */
 }
 
-b {
+/* b {
 	color: #a9e3ed;
 	border-bottom: 2px solid #a9e3ed
-}
+} */
 
 .visible {
 	opacity: 1;
@@ -53,10 +53,10 @@ b {
 	/* background-image: url('img/bg.svg'); */
 	/* background-size: cover; */
 	border-radius: 100px;
-	top: 2.5%;
-	left: 2.5%;
-	width: 95%;
-	height: 95%;
+	top: 1.5%;
+	left: 1.5%;
+	width: 96%;
+	height: 96%;
 	min-width: 500px;
 	min-height: 650px;
 	z-index: 4;
@@ -67,11 +67,11 @@ b {
 
 	display: flex;
 	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
 	position: fixed;
 
 	cursor: default;
@@ -90,15 +90,15 @@ b {
 
 	display: flex;
 	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
 }
 
 #start-title {
@@ -115,7 +115,7 @@ button {
 	border-radius: 15px;
 	border: 2px solid #000;
 	-webkit-box-shadow: 7px 7px 0px rgba(0, 0, 255, .2);
-	        box-shadow: 7px 7px 0px rgba(0, 0, 255, .2);
+	box-shadow: 7px 7px 0px rgba(0, 0, 255, .2);
 	background-color: #fff;
 	color: #ce98ec;
 	text-align: center;
@@ -168,19 +168,19 @@ button:active {
 .scene-fadeinup {
 	-webkit-animation-duration: 0.7s;
 	-webkit-transition-timing-function: ease-in;
-	     -o-transition-timing-function: ease-in;
-	        transition-timing-function: ease-in;
+	-o-transition-timing-function: ease-in;
+	transition-timing-function: ease-in;
 	-webkit-animation-fill-mode: both;
-	        animation-fill-mode: both;
+	animation-fill-mode: both;
 	-webkit-animation-name: fadeInUp;
-	        animation-name: fadeInUp;
+	animation-name: fadeInUp;
 }
 
 @-webkit-keyframes fadeInUp {
 	0% {
 		opacity: 0;
 		-webkit-transform: translate3d(0, 100%, 0);
-		        transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0);
 	}
 
 	50% {
@@ -190,7 +190,7 @@ button:active {
 	100% {
 		opacity: 1;
 		-webkit-transform: none;
-		        transform: none;
+		transform: none;
 	}
 }
 
@@ -198,7 +198,7 @@ button:active {
 	0% {
 		opacity: 0;
 		-webkit-transform: translate3d(0, 100%, 0);
-		        transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0);
 	}
 
 	50% {
@@ -208,27 +208,27 @@ button:active {
 	100% {
 		opacity: 1;
 		-webkit-transform: none;
-		        transform: none;
+		transform: none;
 	}
 }
 
 .gameFade {
 	-webkit-animation-duration: 0.7s;
-	        animation-duration: 0.7s;
+	animation-duration: 0.7s;
 	-webkit-transition-timing-function: ease-in;
-	     -o-transition-timing-function: ease-in;
-	        transition-timing-function: ease-in;
+	-o-transition-timing-function: ease-in;
+	transition-timing-function: ease-in;
 	-webkit-animation-fill-mode: both;
-	        animation-fill-mode: both;
+	animation-fill-mode: both;
 	-webkit-animation-name: gameFade;
-	        animation-name: gameFade;
+	animation-name: gameFade;
 }
 
 @-webkit-keyframes gameFade {
 	0% {
 		opacity: 1;
 		-webkit-transform: translate(0, 0);
-		        transform: translate(0, 0);
+		transform: translate(0, 0);
 	}
 
 	50% {
@@ -238,9 +238,9 @@ button:active {
 	100% {
 		opacity: 0;
 		-webkit-transform: none;
-		        transform: none;
+		transform: none;
 		-webkit-transform: translate(0, 100%);
-		        transform: translate(0, 100%);
+		transform: translate(0, 100%);
 	}
 }
 
@@ -248,7 +248,7 @@ button:active {
 	0% {
 		opacity: 1;
 		-webkit-transform: translate(0, 0);
-		        transform: translate(0, 0);
+		transform: translate(0, 0);
 	}
 
 	50% {
@@ -258,9 +258,9 @@ button:active {
 	100% {
 		opacity: 0;
 		-webkit-transform: none;
-		        transform: none;
+		transform: none;
 		-webkit-transform: translate(0, 100%);
-		        transform: translate(0, 100%);
+		transform: translate(0, 100%);
 	}
 }
 
@@ -298,8 +298,8 @@ li {
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 	padding: 3rem 1rem 5rem 1rem;
 	/* background-color: yellow; */
 }
@@ -353,8 +353,8 @@ li {
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 }
 
 .score-pop {
@@ -378,26 +378,26 @@ li {
 
 	-webkit-animation: pop 700ms ease-in-out forwards;
 
-	        animation: pop 700ms ease-in-out forwards;
+	animation: pop 700ms ease-in-out forwards;
 }
 
 @-webkit-keyframes pop {
 	0% {
 		opacity: 1;
 		-webkit-transform: translate (0, 0) scale(1);
-		        transform: translate (0, 0) scale(1);
+		transform: translate (0, 0) scale(1);
 	}
 
 	70% {
 		opacity: 1;
 		-webkit-transform: translate (0, 0) scale(1);
-		        transform: translate (0, 0) scale(1);
+		transform: translate (0, 0) scale(1);
 	}
 
 	100% {
 		opacity: 0;
 		-webkit-transform: translate(0, -70px) scale(1.2);
-		        transform: translate(0, -70px) scale(1.2);
+		transform: translate(0, -70px) scale(1.2);
 	}
 }
 
@@ -405,24 +405,35 @@ li {
 	0% {
 		opacity: 1;
 		-webkit-transform: translate (0, 0) scale(1);
-		        transform: translate (0, 0) scale(1);
+		transform: translate (0, 0) scale(1);
 	}
 
 	70% {
 		opacity: 1;
 		-webkit-transform: translate (0, 0) scale(1);
-		        transform: translate (0, 0) scale(1);
+		transform: translate (0, 0) scale(1);
 	}
 
 	100% {
 		opacity: 0;
 		-webkit-transform: translate(0, -70px) scale(1.2);
-		        transform: translate(0, -70px) scale(1.2);
+		transform: translate(0, -70px) scale(1.2);
 	}
 }
 
 .cards-div {
 	/* background: #fff; */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
 	width: 40rem;
 	height: 60vh;
 	margin: 0 5vw 0 0;
@@ -438,32 +449,34 @@ li {
 }
 
 .card {
-	display: inline-block;
+	display: flex;
 	position: relative;
 	/* background-color: fuchsia; */
 	margin: 0 1rem 1rem 0;
 	-webkit-backface-visibility: hidden;
-	
+
 }
 
 .card .front,
 .card .back {
 	/* border: 3px solid #fff; */
-	
-	width: 120px;
-	height: 150px;
+
+	width: 8.8vw;
+	height: 11vw;
+	max-width: 140px;
 	border-radius: 15px;
+	background-size: cover;
+	background-position: center;
 	-webkit-transition: background-color 0.25s ease-in-out, -webkit-transform 0.5s;
 	transition: background-color 0.25s ease-in-out, -webkit-transform 0.5s;
 	-o-transition: transform 0.5s, background-color 0.25s ease-in-out;
 	transition: transform 0.5s, background-color 0.25s ease-in-out;
 	transition: transform 0.5s, background-color 0.25s ease-in-out, -webkit-transform 0.5s;
 	-webkit-transition: transform 0.5s, background-color 0.25s ease-in-out;
-	
+
 }
 
 .card .back {
-	z-index: 0;
 	/* background-color: #ce98ec; */
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(rgba(255, 255, 255, 0)));
 	background-image: -o-linear-gradient(top, #ffffff, rgba(255, 255, 255, 0));
@@ -482,26 +495,26 @@ li {
 .card .front {
 	border: 2px solid #000;
 	-webkit-box-shadow: 7px 7px 0px rgba(0, 0, 255, .2);
-	        box-shadow: 7px 7px 0px rgba(0, 0, 255, .2);
+	box-shadow: 7px 7px 0px rgba(0, 0, 255, .2);
 	/* position absolute is what makes the cards overlap */
 	position: absolute;
 	left: 0;
 	top: 0;
 	-webkit-transform: rotateY(-180deg) translateZ(100px);
-	        transform: rotateY(-180deg) translateZ(100px);
+	transform: rotateY(-180deg) translateZ(100px);
 	-webkit-backface-visibility: hidden;
-	        backface-visibility: hidden;
+	backface-visibility: hidden;
 }
 
 .card.turned .front {
 	-webkit-transform: rotateY(0deg);
-			transform: rotateY(0deg);
-			
+	transform: rotateY(0deg);
+
 }
 
 .card.turned .back {
 	-webkit-transform: rotateY(180deg);
-			transform: rotateY(180deg);
+	transform: rotateY(180deg);
 
 	/* for safari would be */
 
@@ -527,18 +540,18 @@ footer {
 
 	display: flex;
 	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
 }
 
 footer>div {
-	border-radius: 100px 100px 0 0;
-	width: 10rem;
-	height: 5rem;
-	background-color: white;
+	border-radius: 50px 50px 0 0;
+	width: 5rem;
+	height: 2.5rem;
+	background-color: #000;
 	/* transition: background-color 0.5s; */
 }
 
@@ -547,11 +560,12 @@ footer>div:hover {
 }
 
 footer>div>p {
-	margin-top: 1rem;
-	font-size: 3rem;
+	color: white;
+	margin-top: 0.5rem;
+	font-size: 1.5rem;
 	text-align: center;
 	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
+	box-sizing: border-box;
 	cursor: pointer;
 }
 
@@ -574,15 +588,15 @@ footer>div>p {
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
 	background: transparent;
 	width: 30%;
 	height: 50%;
@@ -603,12 +617,53 @@ footer>div>p {
 
 /* --------------------- yoooo --------------------- yoooo --------------------- */
 
-
-
-
-@media screen and (max-width: 700px) {
+@media only screen and (min-width: 600px) {
 	:root {
 		font-size: 14px;
+		line-height: 1;
+	}
+
+	h1 {
+		font-size: 1.5rem;
+	}
+
+	.start {
+		min-height: 0;
+	}
+
+	.start>div {
+		color: #000;
+		width: 85%;
+		max-width: 400px;
+		min-width: 0;
+		text-align: center;
+		min-height: 0;
+	}
+
+	button {
+		padding: 10px;
+		width: 200px;
+		margin-top: 1rem;
+		cursor: pointer;
+		visibility: visible;
+	}
+
+}
+
+@media only screen and (min-width: 1000px) {
+	:root {
+		font-size: 16px;
+	}
+
+	.start>div {
+		min-width: 400px;
+	}
+}
+
+
+@media screen and (max-width: 600px) {
+	:root {
+		font-size: 12px;
 	}
 
 	#bobby {
@@ -637,11 +692,11 @@ footer>div>p {
 
 		display: flex;
 		-webkit-box-pack: center;
-		    -ms-flex-pack: center;
-		        justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
 		-webkit-box-align: center;
-		    -ms-flex-align: center;
-		        align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
 		position: fixed;
 
 		cursor: default;
@@ -649,7 +704,7 @@ footer>div>p {
 
 	.start>div {
 		color: #000;
-		width: 55%;
+		width: 65%;
 		max-width: 400px;
 		min-width: 300px;
 		text-align: center;
@@ -660,22 +715,22 @@ footer>div>p {
 
 		display: flex;
 		-webkit-box-pack: center;
-		    -ms-flex-pack: center;
-		        justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
 		-webkit-box-align: center;
-		    -ms-flex-align: center;
-		        align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: normal;
-		    -ms-flex-direction: column;
-		        flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
 	}
 
 	button {
 		border-radius: 15px;
 		border: 2px solid #000;
 		-webkit-box-shadow: 7px 7px 0px rgba(0, 0, 255, .2);
-		        box-shadow: 7px 7px 0px rgba(0, 0, 255, .2);
+		box-shadow: 7px 7px 0px rgba(0, 0, 255, .2);
 		background-color: #ce98ec;
 		color: #000;
 		text-align: center;
@@ -694,10 +749,10 @@ footer>div>p {
 		display: -ms-flexbox;
 		display: flex;
 		-webkit-box-pack: center;
-		    -ms-flex-pack: center;
-		        justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
 		-ms-flex-wrap: wrap;
-		    flex-wrap: wrap;
+		flex-wrap: wrap;
 		height: 10vh;
 	}
 
@@ -705,7 +760,7 @@ footer>div>p {
 		background-color: rgba(255, 255, 255, 0);
 		background-image: url('img/stripes.svg');
 		background-repeat: repeat;
-		width: 350px;
+		width: 320px;
 		height: 40px;
 		border-radius: 50px;
 	}
@@ -720,7 +775,7 @@ footer>div>p {
 		background-color: #ffb600;
 		padding: 0.01em 0;
 		width: 50px;
-		max-width: 300px;
+		max-width: 320px;
 		height: 40px;
 		border-radius: 50px;
 		-o-transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out;
@@ -738,13 +793,13 @@ footer>div>p {
 		display: -ms-flexbox;
 		display: flex;
 		-webkit-box-pack: center;
-		    -ms-flex-pack: center;
-		        justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
 		-webkit-box-align: center;
-		    -ms-flex-align: center;
-		        align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
 		-ms-flex-wrap: wrap;
-		    flex-wrap: wrap;
+		flex-wrap: wrap;
 		width: 90vw;
 		height: 60vh;
 		margin: 1rem 0 0 0;
@@ -764,8 +819,10 @@ footer>div>p {
 	.card .front,
 	.card .back {
 		/* border: 3px solid #fff; */
-		width: 100px;
-		height: 120px;
+		background-size: cover;
+		background-position: center;
+		width: 85px;
+		height: 106px;
 		border-radius: 15px;
 		-webkit-transition: background-color 0.25s ease-in-out, -webkit-transform 0.5s;
 		transition: background-color 0.25s ease-in-out, -webkit-transform 0.5s;
@@ -777,7 +834,7 @@ footer>div>p {
 
 	.card .front {
 		-webkit-box-shadow: 5px 5px 0px rgba(0, 0, 255, .2);
-		        box-shadow: 5px 5px 0px rgba(0, 0, 255, .2);
+		box-shadow: 5px 5px 0px rgba(0, 0, 255, .2);
 	}
 
 	footer {
@@ -800,15 +857,15 @@ footer>div>p {
 		display: -ms-flexbox;
 		display: flex;
 		-webkit-box-pack: center;
-		    -ms-flex-pack: center;
-		        justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
 		-webkit-box-align: center;
-		    -ms-flex-align: center;
-		        align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: normal;
-		    -ms-flex-direction: column;
-		        flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
 		background: transparent;
 		width: 70vw;
 		height: 50vh;
