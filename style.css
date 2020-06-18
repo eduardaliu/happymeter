@@ -13,8 +13,6 @@ body {
 	padding: 0;
 	height: 100vh;
 	background-color: #a9e3ed;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#ce98ec), to(rgba(255, 255, 255, 0)));
-	background-image: -o-linear-gradient(top, #ce98ec, rgba(255, 255, 255, 0));
 	background-image: linear-gradient(180deg, #ce98ec, rgba(255, 255, 255, 0));
 
 	font-family: 'Rubik', Helvetica, Arial;
@@ -61,16 +59,8 @@ h2 {
 	min-height: 650px;
 	z-index: 4;
 
-	display: -webkit-box;
-
-	display: -ms-flexbox;
-
 	display: flex;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
 	justify-content: center;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
 	align-items: center;
 	position: fixed;
 
@@ -84,20 +74,9 @@ h2 {
 	min-width: 300px;
 	text-align: center;
 
-	display: -webkit-box;
-
-	display: -ms-flexbox;
-
 	display: flex;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
 	justify-content: center;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
 	align-items: center;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: column;
 	flex-direction: column;
 }
 
@@ -114,7 +93,6 @@ h2 {
 button {
 	border-radius: 15px;
 	border: 2px solid #000;
-	-webkit-box-shadow: 7px 7px 0px rgba(0, 0, 255, .2);
 	box-shadow: 7px 7px 0px rgba(0, 0, 255, .2);
 	background-color: #fff;
 	color: #ce98ec;
@@ -167,8 +145,6 @@ button:active {
 
 .scene-fadeinup {
 	-webkit-animation-duration: 0.7s;
-	-webkit-transition-timing-function: ease-in;
-	-o-transition-timing-function: ease-in;
 	transition-timing-function: ease-in;
 	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both;
@@ -179,7 +155,6 @@ button:active {
 @-webkit-keyframes fadeInUp {
 	0% {
 		opacity: 0;
-		-webkit-transform: translate3d(0, 100%, 0);
 		transform: translate3d(0, 100%, 0);
 	}
 
@@ -189,7 +164,6 @@ button:active {
 
 	100% {
 		opacity: 1;
-		-webkit-transform: none;
 		transform: none;
 	}
 }
@@ -197,7 +171,6 @@ button:active {
 @keyframes fadeInUp {
 	0% {
 		opacity: 0;
-		-webkit-transform: translate3d(0, 100%, 0);
 		transform: translate3d(0, 100%, 0);
 	}
 
@@ -207,7 +180,6 @@ button:active {
 
 	100% {
 		opacity: 1;
-		-webkit-transform: none;
 		transform: none;
 	}
 }
@@ -215,8 +187,6 @@ button:active {
 .gameFade {
 	-webkit-animation-duration: 0.7s;
 	animation-duration: 0.7s;
-	-webkit-transition-timing-function: ease-in;
-	-o-transition-timing-function: ease-in;
 	transition-timing-function: ease-in;
 	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both;
@@ -227,7 +197,6 @@ button:active {
 @-webkit-keyframes gameFade {
 	0% {
 		opacity: 1;
-		-webkit-transform: translate(0, 0);
 		transform: translate(0, 0);
 	}
 
@@ -237,9 +206,7 @@ button:active {
 
 	100% {
 		opacity: 0;
-		-webkit-transform: none;
 		transform: none;
-		-webkit-transform: translate(0, 100%);
 		transform: translate(0, 100%);
 	}
 }
@@ -247,7 +214,6 @@ button:active {
 @keyframes gameFade {
 	0% {
 		opacity: 1;
-		-webkit-transform: translate(0, 0);
 		transform: translate(0, 0);
 	}
 
@@ -257,9 +223,7 @@ button:active {
 
 	100% {
 		opacity: 0;
-		-webkit-transform: none;
 		transform: none;
-		-webkit-transform: translate(0, 100%);
 		transform: translate(0, 100%);
 	}
 }
@@ -274,7 +238,6 @@ li {
 	padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 	margin: 0.5rem;
 	list-style-type: none;
-	-o-transition: opacity 0.5s ease;
 	transition: opacity 0.5s ease;
 	-webkit-transition: opacity 0.5s ease;
 }
@@ -294,11 +257,7 @@ li {
 }
 
 .header {
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
 	justify-content: center;
 	padding: 3rem 1rem 5rem 1rem;
 	/* background-color: yellow; */
@@ -321,7 +280,6 @@ li {
 	width: 150px;
 	height: 40px;
 	border-radius: 50px;
-	-o-transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out;
 	transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out;
 	-webkit-transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out;
 }
@@ -349,11 +307,7 @@ li {
 }
 
 .content {
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
 	justify-content: center;
 }
 
@@ -384,19 +338,16 @@ li {
 @-webkit-keyframes pop {
 	0% {
 		opacity: 1;
-		-webkit-transform: translate (0, 0) scale(1);
 		transform: translate (0, 0) scale(1);
 	}
 
 	70% {
 		opacity: 1;
-		-webkit-transform: translate (0, 0) scale(1);
 		transform: translate (0, 0) scale(1);
 	}
 
 	100% {
 		opacity: 0;
-		-webkit-transform: translate(0, -70px) scale(1.2);
 		transform: translate(0, -70px) scale(1.2);
 	}
 }
@@ -404,35 +355,25 @@ li {
 @keyframes pop {
 	0% {
 		opacity: 1;
-		-webkit-transform: translate (0, 0) scale(1);
 		transform: translate (0, 0) scale(1);
 	}
 
 	70% {
 		opacity: 1;
-		-webkit-transform: translate (0, 0) scale(1);
 		transform: translate (0, 0) scale(1);
 	}
 
 	100% {
 		opacity: 0;
-		-webkit-transform: translate(0, -70px) scale(1.2);
 		transform: translate(0, -70px) scale(1.2);
 	}
 }
 
 .cards-div {
 	/* background: #fff; */
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
 	justify-content: center;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
 	align-items: center;
-	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 	width: 40rem;
 	height: 60vh;
@@ -467,19 +408,13 @@ li {
 	border-radius: 15px;
 	background-size: cover;
 	background-position: center;
-	-webkit-transition: background-color 0.25s ease-in-out, -webkit-transform 0.5s;
-	transition: background-color 0.25s ease-in-out, -webkit-transform 0.5s;
-	-o-transition: transform 0.5s, background-color 0.25s ease-in-out;
 	transition: transform 0.5s, background-color 0.25s ease-in-out;
-	transition: transform 0.5s, background-color 0.25s ease-in-out, -webkit-transform 0.5s;
 	-webkit-transition: transform 0.5s, background-color 0.25s ease-in-out;
 
 }
 
 .card .back {
 	/* background-color: #ce98ec; */
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(rgba(255, 255, 255, 0)));
-	background-image: -o-linear-gradient(top, #ffffff, rgba(255, 255, 255, 0));
 	background-image: linear-gradient(180deg, #ffffff, rgba(255, 255, 255, 0));
 	border: 2px solid #fff;
 	background-color: #fff;
@@ -494,26 +429,22 @@ li {
 
 .card .front {
 	border: 2px solid #000;
-	-webkit-box-shadow: 7px 7px 0px rgba(0, 0, 255, .2);
 	box-shadow: 7px 7px 0px rgba(0, 0, 255, .2);
 	/* position absolute is what makes the cards overlap */
 	position: absolute;
 	left: 0;
 	top: 0;
-	-webkit-transform: rotateY(-180deg) translateZ(100px);
 	transform: rotateY(-180deg) translateZ(100px);
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
 
 .card.turned .front {
-	-webkit-transform: rotateY(0deg);
 	transform: rotateY(0deg);
 
 }
 
 .card.turned .back {
-	-webkit-transform: rotateY(180deg);
 	transform: rotateY(180deg);
 
 	/* for safari would be */
@@ -534,16 +465,8 @@ footer {
 	left: 0;
 	width: 100%;
 
-	display: -webkit-box;
-
-	display: -ms-flexbox;
-
 	display: flex;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
 	justify-content: center;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
 	align-items: center;
 }
 
@@ -564,7 +487,6 @@ footer>div>p {
 	margin-top: 0.5rem;
 	font-size: 1.5rem;
 	text-align: center;
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	cursor: pointer;
 }
@@ -584,18 +506,9 @@ footer>div>p {
 .happy-gif,
 .sad-gif,
 .ok-gif {
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
 	justify-content: center;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
 	align-items: center;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: column;
 	flex-direction: column;
 	background: transparent;
 	width: 30%;
@@ -686,16 +599,8 @@ footer>div>p {
 		min-height: 0;
 		z-index: 4;
 
-		display: -webkit-box;
-
-		display: -ms-flexbox;
-
 		display: flex;
-		-webkit-box-pack: center;
-		-ms-flex-pack: center;
 		justify-content: center;
-		-webkit-box-align: center;
-		-ms-flex-align: center;
 		align-items: center;
 		position: fixed;
 
@@ -709,27 +614,15 @@ footer>div>p {
 		min-width: 300px;
 		text-align: center;
 
-		display: -webkit-box;
-
-		display: -ms-flexbox;
-
 		display: flex;
-		-webkit-box-pack: center;
-		-ms-flex-pack: center;
 		justify-content: center;
-		-webkit-box-align: center;
-		-ms-flex-align: center;
 		align-items: center;
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: normal;
-		-ms-flex-direction: column;
 		flex-direction: column;
 	}
 
 	button {
 		border-radius: 15px;
 		border: 2px solid #000;
-		-webkit-box-shadow: 7px 7px 0px rgba(0, 0, 255, .2);
 		box-shadow: 7px 7px 0px rgba(0, 0, 255, .2);
 		background-color: #ce98ec;
 		color: #000;
@@ -745,13 +638,8 @@ footer>div>p {
 	}
 
 	.header {
-		display: -webkit-box;
-		display: -ms-flexbox;
 		display: flex;
-		-webkit-box-pack: center;
-		-ms-flex-pack: center;
 		justify-content: center;
-		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
 		height: 10vh;
 	}
@@ -778,7 +666,6 @@ footer>div>p {
 		max-width: 320px;
 		height: 40px;
 		border-radius: 50px;
-		-o-transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out;
 		transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out;
 		-webkit-transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out;
 	}
@@ -789,16 +676,9 @@ footer>div>p {
 
 	.cards-div {
 		/* background: blue; */
-		display: -webkit-box;
-		display: -ms-flexbox;
 		display: flex;
-		-webkit-box-pack: center;
-		-ms-flex-pack: center;
 		justify-content: center;
-		-webkit-box-align: center;
-		-ms-flex-align: center;
 		align-items: center;
-		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
 		width: 90vw;
 		height: 60vh;
@@ -819,21 +699,14 @@ footer>div>p {
 	.card .front,
 	.card .back {
 		/* border: 3px solid #fff; */
-		background-size: cover;
-		background-position: center;
 		width: 85px;
 		height: 106px;
+		background-size: cover;
+		background-position: center;
 		border-radius: 15px;
-		-webkit-transition: background-color 0.25s ease-in-out, -webkit-transform 0.5s;
-		transition: background-color 0.25s ease-in-out, -webkit-transform 0.5s;
-		-o-transition: transform 0.5s, background-color 0.25s ease-in-out;
-		transition: transform 0.5s, background-color 0.25s ease-in-out;
-		transition: transform 0.5s, background-color 0.25s ease-in-out, -webkit-transform 0.5s;
-		-webkit-transition: transform 0.5s, background-color 0.25s ease-in-out;
 	}
 
 	.card .front {
-		-webkit-box-shadow: 5px 5px 0px rgba(0, 0, 255, .2);
 		box-shadow: 5px 5px 0px rgba(0, 0, 255, .2);
 	}
 
@@ -853,18 +726,9 @@ footer>div>p {
 	.happy-gif,
 	.sad-gif,
 	.ok-gif {
-		display: -webkit-box;
-		display: -ms-flexbox;
 		display: flex;
-		-webkit-box-pack: center;
-		-ms-flex-pack: center;
 		justify-content: center;
-		-webkit-box-align: center;
-		-ms-flex-align: center;
 		align-items: center;
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: normal;
-		-ms-flex-direction: column;
 		flex-direction: column;
 		background: transparent;
 		width: 70vw;

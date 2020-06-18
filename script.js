@@ -104,7 +104,6 @@ document.querySelector('button').onclick = () => {
         document.querySelector('.start').style.visibility = 'hidden';
         document.querySelector('button').style.visibility = 'hidden';
     }, 1000)
-
 }
 
 let html = '';
@@ -162,7 +161,7 @@ document.querySelectorAll('.card').forEach(card => {
                 document.querySelector('.ok-gif').innerHTML =
                     `<h2>Almost there...</h2>
                     <img src="img/gameover_almost.gif" alt="OK PUPPY" />
-                    <p class="gameOverTxt">But Bobby's just bamboozled now. <br>Not so helpful, you.</p>`
+                    <p class="gameOverTxt">But Bobby's just bamboozled now. Not so helpful, you.</p>`
             }, 500);
         }
 
@@ -192,7 +191,7 @@ document.querySelectorAll('.card').forEach(card => {
                 document.querySelector('.happy-gif').innerHTML =
                     `<h2>GOOD JOB! We have a happy Bobby!</h2>
                     <img src="img/gameover_happy.gif" alt="SAD PUPPY" />
-                    <p class="gameOverTxt">You're such a good, good human! <br>Oh yes, you are!</p>`
+                    <p class="gameOverTxt">You're such a good, good human! Oh yes, you are!</p>`
             }, 500);
         }
 
