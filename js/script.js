@@ -1,8 +1,6 @@
 $(document).ready(() => {
 
 
-
-
     class Board {
         constructor(cards) {
             this.cards = cards;
@@ -239,9 +237,5 @@ $(document).ready(() => {
     $('footer div').on('click', () => {
         location.reload();
     })
-
-    // var confettiSettings = { target: 'my-canvas' };
-    // var confetti = new ConfettiGenerator(confettiSettings);
-    // confetti.render();
 
 })
