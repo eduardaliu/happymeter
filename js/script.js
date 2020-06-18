@@ -24,8 +24,8 @@ $(document).ready(() => {
     const cardsDog = [{
             name: 'squirrel',
             img: '/squirrel.svg',
-            points: 2000,
-            msg: `<li class='up'><font color='white'>SQUIRREL</font></li> `
+            points: 200,
+            msg: `<li class='up'><b>SQUIRREL</b></font></li> `
         },
         {
             name: 'fireworks',
@@ -42,7 +42,7 @@ $(document).ready(() => {
         {
             name: 'shoes',
             img: '/shoes.svg',
-            points: 1000,
+            points: 100,
             msg: `<li class='up'>a delicious old shoe</li> `
         },
         {
@@ -136,6 +136,10 @@ $(document).ready(() => {
             turnedCards.push(card.target.parentNode); // contando o numero de cards virados
 
             document.querySelector('.turned-cards-div').innerHTML += `${card.target.id}`; // ação na coluna da dir
+            $("li").removeClass("li-scale");
+            $("li:last-child").addClass("li-scale");
+
+            console.log($("li:last-child"))
 
             points += Number(card.target.parentNode.id); // declarando q points é baseado no id do card
             let newWidth = currentWidth + points;
@@ -241,4 +245,3 @@ $(document).ready(() => {
     // confetti.render();
 
 })
-

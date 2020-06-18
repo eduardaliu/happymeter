@@ -23,7 +23,7 @@ body {
 
 canvas {
 	position: absolute;
-	z-index: 30;
+	z-index: 4;
 }
 
 h1 {
@@ -240,11 +240,27 @@ li {
 	color: #fff;
 	border: 2px solid;
 	border-radius: 70px;
-	padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-	margin: 0.5rem;
+	padding: 0.5vmin;
+	margin: 0.5vmin;
 	list-style-type: none;
-	transition: opacity 0.5s ease;
-	-webkit-transition: opacity 0.5s ease;
+}
+
+.li-scale {
+	animation: scale 600ms ease-out forwards;
+}
+
+@-webkit-keyframes scale {
+	0% {
+		background-color: #fff;
+		border-color: #fff;
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scale(1);
+	}
 }
 
 .up {
@@ -270,7 +286,7 @@ li {
 
 .meter {
 	background-color: rgba(255, 255, 255, 0);
-	background-image: url('img/stripes.svg');
+	background-image: url('../img/stripes.svg');
 	background-repeat: repeat;
 	width: 550px;
 	height: 40px;
@@ -407,8 +423,8 @@ li {
 .card .back {
 	/* border: 3px solid #fff; */
 
-	width: 8.8vw;
-	height: 11vw;
+	width: 15vmin;
+	height: 18vmin;
 	max-width: 140px;
 	border-radius: 15px;
 	background-size: cover;
@@ -464,7 +480,7 @@ li {
 }
 
 footer {
-	z-index: 3;
+	z-index: 5;
 	position: fixed;
 	bottom: 0;
 	left: 0;
@@ -602,7 +618,7 @@ footer>div>p {
 		height: 100vh;
 		min-width: 0;
 		min-height: 0;
-		z-index: 4;
+		z-index: 5;
 
 		display: flex;
 		justify-content: center;
@@ -651,7 +667,7 @@ footer>div>p {
 
 	.meter {
 		background-color: rgba(255, 255, 255, 0);
-		background-image: url('img/stripes.svg');
+		background-image: url('../img/stripes.svg');
 		background-repeat: repeat;
 		width: 320px;
 		height: 40px;
@@ -687,6 +703,7 @@ footer>div>p {
 		flex-wrap: wrap;
 		width: 90vw;
 		height: 60vh;
+		max-height: 10vh;
 		margin: 1rem 0 0 0;
 		border-radius: 50px;
 	}
