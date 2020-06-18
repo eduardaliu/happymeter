@@ -21,6 +21,11 @@ body {
 	color: #000;
 }
 
+canvas {
+	position: absolute;
+	z-index: 30;
+}
+
 h1 {
 	text-transform: uppercase;
 	margin: 1rem 0 1rem 0;
@@ -744,6 +749,5 @@ footer>div>p {
 		font-weight: 300;
 		text-align: center;
 	}
-
 
 }
