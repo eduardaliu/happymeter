@@ -29,36 +29,36 @@ $(document).ready(() => {
             name: 'fireworks',
             img: '/fireworks.svg',
             points: -100,
-            msg: `<li class='down'>fireworks suck big time</li> `
+            msg: `<li class='down'>sky explosions (aka fireworks)</li> `
         },
         {
             name: 'vet',
             img: '/vet.svg',
             points: -30,
-            msg: `<li class='down'>time for a vet check-up</li> `
+            msg: `<li class='down'>time for a vet check-up...</li> `
         },
         {
             name: 'shoes',
             img: '/shoes.svg',
             points: 100,
-            msg: `<li class='up'>a delicious old shoe</li> `
+            msg: `<li class='up'>nomnom delicious old shoe</li> `
         },
         {
             name: 'vacuum',
             img: '/vacuum.svg',
             points: -100,
-            msg: `<li class='down'>evil snake aka the vacuum</li> `
+            msg: `<li class='down'>evil snake (aka the vacuum)</li> `
         },
         {
             name: 'bird',
             img: '/bird.svg',
-            points: 50,
+            points: 70,
             msg: `<li class='up'>oh my GOSH, a birb</li> `
         },
         {
             name: 'petshop',
             img: '/petshop.svg',
-            points: 50,
+            points: 70,
             msg: `<li class='up'>trip to the pet shop incoming</li> `
         },
         {
@@ -71,25 +71,25 @@ $(document).ready(() => {
             name: 'toys',
             img: '/toys.svg',
             points: 100,
-            msg: `<li class='up'>toys makes life great again</li> `
+            msg: `<li class='up'>yay chew toys!</li> `
         },
         {
             name: 'cat',
             img: '/cat.svg',
             points: -120,
-            msg: `<li class='down'>mr. whiskers is an asshole</li> `
+            msg: `<li class='down'>mr. whiskers - he's an asshole</li> `
         },
         {
             name: 'trash',
             img: '/trash.svg',
             points: 80,
-            msg: `<li class='up'>bag of treasures aka trash</li> `
+            msg: `<li class='up'>bag of treasures (aka the trash)</li> `
         },
         {
             name: 'post',
             img: '/post.svg',
-            points: 30,
-            msg: `<li class='up'>hello mr. postman!</li> `
+            points: 40,
+            msg: `<li class='up'>woo hoo there's the postman!</li> `
         },
     ];
 
@@ -124,11 +124,10 @@ $(document).ready(() => {
         card.addEventListener('click', (card) => {
 
             card.target.parentNode.classList.add("turned"); // vira o card que o loop ta iterando sobre
-            card.target.style.backgroundColor = '#fff'; // fade in do bgcolor
 
             card.target.previousElementSibling.style.display = 'block'; // seleciona o sibling anterior do elemento
-            if (card.target.previousElementSibling.innerHTML.indexOf("-") !== -1) {
-                card.target.previousElementSibling.style.backgroundColor = '#ffcfeb';
+            if (card.target.previousElementSibling.innerHTML.indexOf("-") !== -1) { // se o número d pts for negativo
+                card.target.previousElementSibling.style.backgroundColor = '#ffcfeb'; // corzinha do bg dos pontos é rosa
             }
 
             turnedCards.push(card.target.parentNode); // contando o numero de cards virados
@@ -137,41 +136,20 @@ $(document).ready(() => {
             $("li").removeClass("li-scale");
             $("li:last-child").addClass("li-scale");
 
-            console.log($("li:last-child"))
+            // console.log($("li:last-child"))
 
-            points += Number(card.target.parentNode.id); // declarando q points é baseado no id do card
+            points += Number(card.target.parentNode.id); // declarando q points é baseado no id do card ***
             let newWidth = currentWidth + points;
             document.querySelector('.meter-progress').style.width = `${newWidth}px`; // adicionando points to the width of the bar
 
             if (Number(card.target.parentNode.id) < 0) {
                 currentStreak = 0;
                 document.querySelector('.streak-nr').innerHTML = 0;
+                document.querySelector('#emoji').innerText = '💩'
             } else {
                 currentStreak = currentStreak + 1;
                 document.querySelector('.streak-nr').innerHTML = `${currentStreak}`;
-            }
-
-            if (Number(card.target.parentNode.id) < 0) {
-                document.querySelector('#emoji').innerText = '💔'
-            } else {
-                document.querySelector('#emoji').innerText = '💕'
-            }
-
-            if (turnedCards.length === 12 && newWidth < 500) { // if all cards were turned
-                setTimeout(() => {
-                    // alert('all cards turned');
-                    document.querySelector('.game-over').style.visibility = 'visible';
-                    // document.querySelector('.game-over').onload = startConfetti();
-
-                    document.querySelector('body').onclick = () => {
-                        location.reload();
-                    }
-                    document.querySelector('.ok-gif').style.visibility = 'visible';
-                    document.querySelector('.ok-gif').innerHTML =
-                        `<h2>Almost there...</h2>
-                    <img src="img/gameover_almost.gif" alt="OK PUPPY" />
-                    <p class="gameOverTxt">But Bobby's just bamboozled now. Not so helpful, you.</p>`
-                }, 500);
+                document.querySelector('#emoji').innerText = '💖'
             }
 
             if (newWidth > 0 && newWidth <= 150) { // if bar get empty
@@ -188,6 +166,20 @@ $(document).ready(() => {
                 document.querySelector('.meter-progress').style.backgroundColor = '#96f739';
             }
 
+            if (turnedCards.length === 12 && newWidth < 500) { // if all cards were turned
+                setTimeout(() => {
+                    document.querySelector('.game-over').style.visibility = 'visible';
+
+                    document.querySelector('body').onclick = () => {
+                        location.reload();
+                    }
+                    document.querySelector('.ok-gif').style.visibility = 'visible';
+                    document.querySelector('.ok-gif').innerHTML =
+                        `<h2>Almost there...</h2>
+                         <img src="img/gameover_almost.gif" alt="OK PUPPY" />
+                         <p class="gameOverTxt">But Bobby's just bamboozled now. Not so helpful, you.</p>`
+                }, 500);
+            }
 
             if (newWidth >= 550) { // if bar gets full
                 document.querySelector('.meter-progress').style.width = '550px';
@@ -206,8 +198,8 @@ $(document).ready(() => {
                     document.querySelector('.happy-gif').style.visibility = 'visible';
                     document.querySelector('.happy-gif').innerHTML =
                         `<h2>GOOD JOB! We have a happy Bobby!</h2>
-                    <img src="img/gameover_happy.gif" alt="SAD PUPPY" />
-                    <p class="gameOverTxt">You're such a good, good human! Oh yes, you are!</p>`
+                         <img src="img/gameover_happy.gif" alt="SAD PUPPY" />
+                         <p class="gameOverTxt">You're such a good, good human! Oh yes, you are!</p>`
                 }, 500);
             }
 
@@ -224,8 +216,8 @@ $(document).ready(() => {
                     document.querySelector('.sad-gif').style.visibility = 'visible';
                     document.querySelector('.sad-gif').innerHTML =
                         `<h2>Oh no. You made Bobby extra sad.</h2> 
-                    <img src="img/gameover_sad.gif" alt="SAD PUPPY" />
-                    <p class="gameOverTxt">Why do you hate Bobby so much?</p>`
+                         <img src="img/gameover_sad.gif" alt="SAD PUPPY" />
+                         <p class="gameOverTxt">Why do you hate Bobby so much?</p>`
                 }, 500)
             }
 
